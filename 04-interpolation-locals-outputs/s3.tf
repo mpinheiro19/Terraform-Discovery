@@ -20,4 +20,8 @@ resource "aws_s3_object" "this" {
 
   etag = filemd5("${local.payload_folder}/${local.payload_object}")
 
+  content_type = "application/json"
+
+  tags = local.common_tags
+
 }
